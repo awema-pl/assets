@@ -11,23 +11,23 @@ use Illuminate\Support\Facades\File;
 
 class AssetController extends Controller
 {
-    public function asset($moduleName, $fileType, $file)
+    public function asset($moduleName, $fileType, $filePath)
     {
-        $pathFile = sprintf('%1$s/vendor/awema-pl/module-%2$s/dist/%3$s/%4$s', base_path(),mb_strtolower($moduleName), $fileType, $file);
+        $path= sprintf('%1$s/vendor/awema-pl/module-%2$s/dist/%3$s/%4$s', base_path(),mb_strtolower($moduleName), $fileType, $filePath);
 
         if ($fileType === 'css'){
             $contentType = 'text/css';
         } else  if ($fileType === 'js'){
             $contentType = 'application/javascript';
         }else  {
-            $contentType = mime_content_type($pathFile);
+            $contentType = mime_content_type($path);
         }
 
-        if (!File::exists($pathFile)){
+        if (!File::exists($path)){
             abort(404);
         }
 
-        return response(File::get($pathFile), 200)
+        return response(File::get($path), 200)
             ->header('Content-Type', $contentType);
     }
 }
