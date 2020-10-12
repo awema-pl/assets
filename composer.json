@@ -1,0 +1,63 @@
+{
+    "name": "awema-pl/module-assets",
+    "description": "Loader assets from modules.",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Karol Golec",
+            "email": "karolgolec10@gmail.com",
+            "homepage": "https://github.pl/awema-pl/module-assets",
+            "role": "Developer"
+        }
+    ],
+    "support": {
+        "email": "karolgolec10@gmail.com"
+    },
+    "homepage": "https://github.com/awema-pl/module-assets",
+    "keywords": [
+        "Laravel",
+        "Assets",
+        "Awema.pl",
+        "layout",
+        "styles",
+        "admin",
+        "dashboard",
+        "ui",
+        "ui interface",
+        "awema.pl"
+    ],
+    "require": {
+        "php": "^7.1.3",
+        "illuminate/support": "~5|~6|~7|~8|~9",
+        "ext-fileinfo": "*"
+    },
+    "autoload": {
+        "psr-4": {
+            "AwemaPL\\Assets\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "AwemaPL\\Assets\\Tests\\": "tests/"
+        }
+    },
+    "scripts": {
+        "test": "vendor/bin/phpunit --colors=always"
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "AwemaPL\\Assets\\AssetsServiceProvider"
+            ]
+        }
+    },
+    "config": {
+        "sort-packages": true
+    },
+    "repositories": [
+
+    ],
+    "minimum-stability": "dev",
+    "prefer-stable": true
+}
