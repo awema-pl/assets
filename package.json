@@ -1,6 +1,6 @@
 {
     "name": "assets",
-    "version": "1.10.16",
+    "version": "1.10.17",
     "description": "Basic styles and components set for building user interfaces.",
     "main": "dist/js/main.js",
     "module": "src/js/plugin.js",
